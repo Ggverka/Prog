@@ -7,6 +7,13 @@ import java.util.NoSuchElementException;
 public class Query {
     public static class QueryBreak extends Exception {}
 
+    /**
+     *
+     * @param console Консоль для ввода данных
+     * @param id Уникальный идентификатор
+     * @return Объект класса MusicBand
+     * @throws QueryBreak
+     */
     public static MusicBand queryMusicBand(Console console, int id) throws QueryBreak {
         String name;
         Long numberOfParticipants = null;
@@ -63,6 +70,11 @@ public class Query {
         }
     }
 
+    /**
+     *
+     * @param console Консоль для ввода данных
+     * @return Объект класса Coordinates
+     */
     public static Coordinates queryCoordinates(Console console) throws QueryBreak {
         try {
             int x;
@@ -81,7 +93,7 @@ public class Query {
                 }
                 else console.printError("Значение поля \"coordinates.x\" не может быть null.");
             }
-            Integer y;
+            int y;
             while (true) {
                 console.print("coordinates.y (<= 456): ");
                 var line = console.readln().trim();
@@ -103,9 +115,15 @@ public class Query {
             return null;
         }
     }
+
+    /**
+     *
+     * @param console Консоль для ввода данных
+     * @return Объект класса Location
+     */
     public static Location queryLocation(Console console) throws QueryBreak {
         try {
-            Double x;
+            double x;
             while (true) {
                 console.print("location.x: ");
                 var line = console.readln().trim();
@@ -149,6 +167,11 @@ public class Query {
         }
     }
 
+    /**
+     *
+     * @param console Консоль для ввода данных
+     * @return Обьект класса MusicGenre
+     */
     public static MusicGenre queryMusicGenre(Console console) throws QueryBreak {
         try {
             MusicGenre musicgenre;
@@ -176,6 +199,11 @@ public class Query {
         }
     }
 
+    /**
+     *
+     * @param console Консоль для ввода данных
+     * @return Объект класса Country
+     */
     public static Country queryCountry(Console console) throws QueryBreak {
         try {
             Country nationality;
@@ -202,6 +230,13 @@ public class Query {
             return null;
         }
     }
+
+    /**
+     *
+     * @param console Консоль для ввода данных
+     * @return
+     * @throws QueryBreak
+     */
     public static Person queryPerson(Console console) throws QueryBreak {
         String passportID;
         String name;

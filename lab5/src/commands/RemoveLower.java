@@ -6,10 +6,6 @@ import models.MusicBand;
 import models.Query;
 import util.Console;
 
-import java.util.ArrayDeque;
-import java.util.Iterator;
-import java.util.PriorityQueue;
-
 public class RemoveLower extends Command{
 
     private final Console console;

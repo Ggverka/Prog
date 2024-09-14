@@ -1,9 +1,6 @@
 package commands;
 import managers.CollectionManager;
-import models.MusicBand;
 import util.Console;
-
-import java.util.ArrayDeque;
 
 public class Save extends Command {
     private final Console console;

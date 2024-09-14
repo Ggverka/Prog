@@ -11,10 +11,18 @@ public abstract class Command implements Executable {
         this.description = description;
     }
 
+    /**
+     * Возвращает название данной команды
+     * @return Название команды
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Возвращает описание данной команды
+     * @return Описание команды
+     */
     public String getDescription() {
         return description;
     }

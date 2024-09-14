@@ -29,6 +29,10 @@ public class DumpManager {
         this.console = console;
     }
 
+    /**
+     * Записывает коллекцию на файл, переводя в формат .json
+     * @param collection коллекция, хранящаяся в менеджере коллекции
+     */
     public void writeCollection(ArrayDeque<MusicBand> collection) {
         try (PrintWriter collectionPrintWriter = new PrintWriter(new File(fileName))) {
             collectionPrintWriter.println(gson.toJson(collection));
@@ -38,6 +42,10 @@ public class DumpManager {
         }
     }
 
+    /**
+     * Считывает коллекцию с файла формата .json
+     * @return Коллекция, считанная с файла
+     */
     public ArrayDeque<MusicBand> readCollection() {
         if (fileName != null && !fileName.isEmpty()) {
             try (InputStreamReader inputStreamReader = new InputStreamReader(new FileInputStream(fileName))) {

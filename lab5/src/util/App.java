@@ -27,6 +27,9 @@ public class App {
         this.commandManager = commandManager;
     }
 
+    /**
+     * Режим считывания команд с консоли
+     */
     public void interactiveMode() {
         var userScanner = Interrogator.getUserScanner();
         try {
@@ -50,6 +53,11 @@ public class App {
         }
     }
 
+    /**
+     * Режим считывания команд из Скрипта
+     * @param argument Аргумент скрипта
+     * @return Статус выполнения команды по завершении
+     */
     public ExitCode scriptMode(String argument) {
         String[] userCommand;
         ExitCode commandStatus;
@@ -102,6 +110,12 @@ public class App {
         return ExitCode.ERROR;
     }
 
+    /**
+     * Исполняет команду
+     * @param userCommand Команда, введенная пользователем
+     * @return Статус команды по завершении
+     * @throws QueryBreak
+     */
     private ExitCode launchCommand(String[] userCommand) throws QueryBreak {
         if (userCommand[0].equals("")) return ExitCode.OK;
         var command = commandManager.getCommands().get(userCommand[0]);

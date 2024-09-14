@@ -2,6 +2,9 @@ package util;
 
 import java.util.Scanner;
 
+/**
+ * Манипулирует режимами ввода данных пользователя
+ */
 public class Interrogator {
     private static Scanner userScanner;
     private static boolean fileMode = false;
